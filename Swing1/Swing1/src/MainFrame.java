@@ -46,6 +46,19 @@ public class MainFrame extends JFrame
 			
 		});
 		
+		formPanel.setFormListener(new FormListener()
+		{
+			public void formEventOccurred(FormEvent e)
+			{
+				String name = e.getName();
+				String occupation = e.getOccupation();
+				
+				textpanel.appendTexts(name + ": " + occupation + "\n");
+				
+			}
+			
+		});
+		
 		add(formPanel,BorderLayout.WEST);
 		add(toolbar,BorderLayout.NORTH);
 		add(textpanel,BorderLayout.CENTER);//add text 
